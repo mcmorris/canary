@@ -526,7 +526,7 @@
                                                             </Types>
                                                             <Binding flavour="constant">
                                                               <Type>float</Type>
-                                                              <Value>5.0</Value>
+                                                              <Value>1.0</Value>
                                                             </Binding>
                                                           </KnowIt>
                                                           <KnowIt>
@@ -695,19 +695,1711 @@
                                     </Children>
                                     <Successors>
                                       <StoryPoint>
-                                        <Name>New Story Point</Name>
+                                        <Name>A School?</Name>
                                         <Visible>true</Visible>
                                         <Enabled>true</Enabled>
                                         <Labels/>
-                                        <Children/>
+                                        <Children>
+                                          <CauseIt>
+                                            <Name>When &lt;subject&gt; is entered by &lt;Entering Creature&gt;</Name>
+                                            <Visible>true</Visible>
+                                            <Enabled>true</Enabled>
+                                            <Labels/>
+                                            <Children>
+                                              <KnowIt>
+                                                <Name>Is Active</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <Types>
+                                                  <Type>question</Type>
+                                                </Types>
+                                                <Binding flavour="function">
+                                                  <ScriptIt>
+                                                    <Name>if &lt;Story Point&gt; is active</Name>
+                                                    <Visible>false</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children/>
+                                                    <CodeBlocks>
+                                                      <CodeBlockReference library="DefaultNWNLibrary">
+                                                        <Name>if &lt;Story Point&gt; is active</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <TargetId>455</TargetId>
+                                                        <Parameters>
+                                                          <KnowIt>
+                                                            <Name>Story Point</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>storyPoint</Type>
+                                                            </Types>
+                                                            <Binding flavour="storyPoint">
+                                                              <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint"/>
+                                                            </Binding>
+                                                          </KnowIt>
+                                                        </Parameters>
+                                                      </CodeBlockReference>
+                                                    </CodeBlocks>
+                                                  </ScriptIt>
+                                                </Binding>
+                                              </KnowIt>
+                                              <KnowIt>
+                                                <Name>The Player Character</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <Types>
+                                                  <Type>creature</Type>
+                                                </Types>
+                                                <Binding flavour="function">
+                                                  <ScriptIt>
+                                                    <Name>The Player Character</Name>
+                                                    <Visible>false</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels>
+                                                      <Label></Label>
+                                                    </Labels>
+                                                    <Children/>
+                                                    <CodeBlocks>
+                                                      <CodeBlockReference library="DefaultNWNLibrary">
+                                                        <Name>The Player Character</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <TargetId>439</TargetId>
+                                                      </CodeBlockReference>
+                                                    </CodeBlocks>
+                                                  </ScriptIt>
+                                                </Binding>
+                                              </KnowIt>
+                                              <AskIt>
+                                                <Name>&lt;Question&gt;</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <Children>
+                                                  <StoryComponentContainer>
+                                                    <Name>Yes:</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children>
+                                                      <ScriptIt>
+                                                        <Name>Deal &lt;Amount&gt; points of &lt;Damage Type&gt; damage to &lt;Target&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels>
+                                                          <Label>NOW</Label>
+                                                        </Labels>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>Deal &lt;Amount&gt; points of &lt;Damage Type&gt; damage to &lt;Target&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>324</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>Amount</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>float</Type>
+                                                                </Types>
+                                                                <Binding flavour="constant">
+                                                                  <Type>float</Type>
+                                                                  <Value>1.0</Value>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                              <KnowIt>
+                                                                <Name>Damage Type</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>damage_type</Type>
+                                                                </Types>
+                                                                <Binding flavour="constant">
+                                                                  <Type>damage_type</Type>
+                                                                  <Value>DAMAGE_TYPE_NEGATIVE</Value>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                              <KnowIt>
+                                                                <Name>Target</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>creature</Type>
+                                                                  <Type>placeable</Type>
+                                                                  <Type>door</Type>
+                                                                  <Type>item</Type>
+                                                                  <Type>trigger</Type>
+                                                                </Types>
+                                                                <Binding flavour="reference">
+                                                                  <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]"/>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                      <ScriptIt>
+                                                        <Name>&lt;Starter&gt; starts &lt;Conversation&gt; with &lt;Partner&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels>
+                                                          <Label>TODO</Label>
+                                                        </Labels>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>&lt;Starter&gt; starts &lt;Conversation&gt; with &lt;Partner&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>377</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>Starter</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>creature</Type>
+                                                                  <Type>door</Type>
+                                                                  <Type>placeable</Type>
+                                                                </Types>
+                                                                <Binding flavour="reference">
+                                                                  <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]"/>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                              <KnowIt>
+                                                                <Name>Conversation</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>dialogue</Type>
+                                                                </Types>
+                                                                <Binding flavour="resource">conv_catschool.DLG</Binding>
+                                                              </KnowIt>
+                                                              <KnowIt>
+                                                                <Name>Partner</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>creature</Type>
+                                                                  <Type>door</Type>
+                                                                  <Type>placeable</Type>
+                                                                </Types>
+                                                                <Binding flavour="resource">zep_catblack001.UTC</Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                      <ScriptIt>
+                                                        <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels>
+                                                          <Label>NOW</Label>
+                                                        </Labels>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>468</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>Story Point</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>storyPoint</Type>
+                                                                </Types>
+                                                                <Binding flavour="storyPoint">
+                                                                  <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint"/>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                              <KnowIt>
+                                                                <Name>Text</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>string</Type>
+                                                                </Types>
+                                                                <Binding flavour="constant">
+                                                                  <Type>string</Type>
+                                                                  <Value>It looks like I?ve stepped into some kind of school.  That?s impossible!  There must be something strange in the air causing me to hallucinate.</Value>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                      <ScriptIt>
+                                                        <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels>
+                                                          <Label>NOW</Label>
+                                                        </Labels>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>468</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>Story Point</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>storyPoint</Type>
+                                                                </Types>
+                                                                <Binding flavour="storyPoint">
+                                                                  <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint"/>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                              <KnowIt>
+                                                                <Name>Text</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>string</Type>
+                                                                </Types>
+                                                                <Binding flavour="constant">
+                                                                  <Type>string</Type>
+                                                                  <Value>It looks like there?s some kind of old school set up down here.  Did the disappeared set up a camp down here?  Are Catherine and Viktor among them?  Why?  Is something preventing them from leaving?</Value>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                      <ScriptIt>
+                                                        <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels>
+                                                          <Label>NOW</Label>
+                                                        </Labels>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>430</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>Enable</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>enable_disable</Type>
+                                                                </Types>
+                                                                <Binding flavour="constant">
+                                                                  <Type>enable_disable</Type>
+                                                                  <Value>FALSE</Value>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                              <KnowIt>
+                                                                <Name>dialogue line</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>dialogue_line</Type>
+                                                                </Types>
+                                                                <Binding flavour="resource">conv_catschool.DLG#0</Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>431</TargetId>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                      <ScriptIt>
+                                                        <Name>Succeed &lt;Story Point&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels>
+                                                          <Label>NOW</Label>
+                                                        </Labels>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>Succeed &lt;Story Point&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>432</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>Story Point</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>storyPoint</Type>
+                                                                </Types>
+                                                                <Binding flavour="storyPoint">
+                                                                  <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint"/>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                    </Children>
+                                                  </StoryComponentContainer>
+                                                  <StoryComponentContainer>
+                                                    <Name>No:</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children/>
+                                                  </StoryComponentContainer>
+                                                </Children>
+                                                <Condition>
+                                                  <KnowIt>
+                                                    <Name>Question</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Types>
+                                                      <Type>question</Type>
+                                                    </Types>
+                                                    <Binding flavour="reference">
+                                                      <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt"/>
+                                                    </Binding>
+                                                  </KnowIt>
+                                                </Condition>
+                                              </AskIt>
+                                            </Children>
+                                            <CodeBlocks>
+                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                <Name>When &lt;subject&gt; is entered by &lt;Entering Creature&gt;</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <TargetId>139</TargetId>
+                                                <Parameters>
+                                                  <KnowIt>
+                                                    <Name>subject</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Types>
+                                                      <Type>area</Type>
+                                                    </Types>
+                                                    <Binding flavour="resource">schoolarea001.ARE</Binding>
+                                                  </KnowIt>
+                                                </Parameters>
+                                              </CodeBlockReference>
+                                            </CodeBlocks>
+                                          </CauseIt>
+                                        </Children>
                                         <Successors>
+                                          <StoryPoint>
+                                            <Name>Welcome to Class</Name>
+                                            <Visible>true</Visible>
+                                            <Enabled>true</Enabled>
+                                            <Labels/>
+                                            <Children>
+                                              <CauseIt>
+                                                <Name>When &lt;subject&gt; is entered by &lt;Entering Creature&gt;</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <Children>
+                                                  <KnowIt>
+                                                    <Name>Is Active</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Types>
+                                                      <Type>question</Type>
+                                                    </Types>
+                                                    <Binding flavour="function">
+                                                      <ScriptIt>
+                                                        <Name>if &lt;Story Point&gt; is active</Name>
+                                                        <Visible>false</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>if &lt;Story Point&gt; is active</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>455</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>Story Point</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>storyPoint</Type>
+                                                                </Types>
+                                                                <Binding flavour="storyPoint">
+                                                                  <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint"/>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                    </Binding>
+                                                  </KnowIt>
+                                                  <KnowIt>
+                                                    <Name>The Player Character</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Types>
+                                                      <Type>creature</Type>
+                                                    </Types>
+                                                    <Binding flavour="function">
+                                                      <ScriptIt>
+                                                        <Name>The Player Character</Name>
+                                                        <Visible>false</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels>
+                                                          <Label></Label>
+                                                        </Labels>
+                                                        <Children/>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>The Player Character</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>439</TargetId>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </ScriptIt>
+                                                    </Binding>
+                                                  </KnowIt>
+                                                  <AskIt>
+                                                    <Name>&lt;Question&gt;</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children>
+                                                      <StoryComponentContainer>
+                                                        <Name>Yes:</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children>
+                                                          <ScriptIt>
+                                                            <Name>&lt;Starter&gt; starts &lt;Conversation&gt; with &lt;Partner&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels>
+                                                              <Label>TODO</Label>
+                                                            </Labels>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>&lt;Starter&gt; starts &lt;Conversation&gt; with &lt;Partner&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>377</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Starter</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>creature</Type>
+                                                                      <Type>door</Type>
+                                                                      <Type>placeable</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="reference">
+                                                                      <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]"/>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                  <KnowIt>
+                                                                    <Name>Conversation</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>dialogue</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="resource">conv_teachclass.DLG</Binding>
+                                                                  </KnowIt>
+                                                                  <KnowIt>
+                                                                    <Name>Partner</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>creature</Type>
+                                                                      <Type>door</Type>
+                                                                      <Type>placeable</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="resource">femaleteacher001.UTC</Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                          <ScriptIt>
+                                                            <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels>
+                                                              <Label>NOW</Label>
+                                                            </Labels>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>468</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Story Point</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>storyPoint</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="storyPoint">
+                                                                      <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint"/>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                  <KnowIt>
+                                                                    <Name>Text</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>string</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="constant">
+                                                                      <Type>string</Type>
+                                                                      <Value>I must be hallucinating.  I stepped into what appeared to be an active classroom, and the teacher there treated me like a child.  Am I losing my mind?</Value>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                          <ScriptIt>
+                                                            <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels>
+                                                              <Label>NOW</Label>
+                                                            </Labels>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>430</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Enable</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>enable_disable</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="constant">
+                                                                      <Type>enable_disable</Type>
+                                                                      <Value>FALSE</Value>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                  <KnowIt>
+                                                                    <Name>dialogue line</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>dialogue_line</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="resource">conv_teachclass.DLG#0</Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>431</TargetId>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                          <ScriptIt>
+                                                            <Name>Deal &lt;Amount&gt; points of &lt;Damage Type&gt; damage to &lt;Target&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels>
+                                                              <Label>NOW</Label>
+                                                            </Labels>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>Deal &lt;Amount&gt; points of &lt;Damage Type&gt; damage to &lt;Target&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>324</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Amount</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>float</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="constant">
+                                                                      <Type>float</Type>
+                                                                      <Value>1.0</Value>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                  <KnowIt>
+                                                                    <Name>Damage Type</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>damage_type</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="constant">
+                                                                      <Type>damage_type</Type>
+                                                                      <Value>DAMAGE_TYPE_NEGATIVE</Value>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                  <KnowIt>
+                                                                    <Name>Target</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>creature</Type>
+                                                                      <Type>placeable</Type>
+                                                                      <Type>door</Type>
+                                                                      <Type>item</Type>
+                                                                      <Type>trigger</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="reference">
+                                                                      <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt[2]"/>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                          <ScriptIt>
+                                                            <Name>Succeed &lt;Story Point&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels>
+                                                              <Label>NOW</Label>
+                                                            </Labels>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>Succeed &lt;Story Point&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>432</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Story Point</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>storyPoint</Type>
+                                                                    </Types>
+                                                                    <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                        </Children>
+                                                      </StoryComponentContainer>
+                                                      <StoryComponentContainer>
+                                                        <Name>No:</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children/>
+                                                      </StoryComponentContainer>
+                                                    </Children>
+                                                    <Condition>
+                                                      <KnowIt>
+                                                        <Name>Question</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Types>
+                                                          <Type>question</Type>
+                                                        </Types>
+                                                        <Binding flavour="reference">
+                                                          <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt"/>
+                                                        </Binding>
+                                                      </KnowIt>
+                                                    </Condition>
+                                                  </AskIt>
+                                                </Children>
+                                                <CodeBlocks>
+                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                    <Name>When &lt;subject&gt; is entered by &lt;Entering Creature&gt;</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <TargetId>139</TargetId>
+                                                    <Parameters>
+                                                      <KnowIt>
+                                                        <Name>subject</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Types>
+                                                          <Type>area</Type>
+                                                        </Types>
+                                                        <Binding flavour="resource">classroom.ARE</Binding>
+                                                      </KnowIt>
+                                                    </Parameters>
+                                                  </CodeBlockReference>
+                                                </CodeBlocks>
+                                              </CauseIt>
+                                            </Children>
+                                            <Successors>
+                                              <StoryPoint>
+                                                <Name>Classroom</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <Children>
+                                                  <CauseIt>
+                                                    <Name>When &lt;subject&gt; is reached</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children>
+                                                      <KnowIt>
+                                                        <Name>Is Active</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Types>
+                                                          <Type>question</Type>
+                                                        </Types>
+                                                        <Binding flavour="function">
+                                                          <ScriptIt>
+                                                            <Name>if &lt;Story Point&gt; is active</Name>
+                                                            <Visible>false</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>if &lt;Story Point&gt; is active</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>455</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Story Point</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>storyPoint</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="storyPoint">
+                                                                      <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint"/>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                        </Binding>
+                                                      </KnowIt>
+                                                      <AskIt>
+                                                        <Name>&lt;Question&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children>
+                                                          <StoryComponentContainer>
+                                                            <Name>Yes:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children>
+                                                              <ScriptIt>
+                                                                <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels>
+                                                                  <Label>NOW</Label>
+                                                                </Labels>
+                                                                <Children/>
+                                                                <CodeBlocks>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>Add Journal Point to Journal Record of &lt;Story Point&gt; with text &lt;Text&gt;</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>468</TargetId>
+                                                                    <Parameters>
+                                                                      <KnowIt>
+                                                                        <Name>Story Point</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>storyPoint</Type>
+                                                                        </Types>
+                                                                        <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[4]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                                                      </KnowIt>
+                                                                      <KnowIt>
+                                                                        <Name>Text</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>string</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="constant">
+                                                                          <Type>string</Type>
+                                                                          <Value>None of the people here claim to know who Catherine and Viktor are.  Are they covering up for someone?</Value>
+                                                                        </Binding>
+                                                                      </KnowIt>
+                                                                    </Parameters>
+                                                                  </CodeBlockReference>
+                                                                </CodeBlocks>
+                                                              </ScriptIt>
+                                                            </Children>
+                                                          </StoryComponentContainer>
+                                                          <StoryComponentContainer>
+                                                            <Name>No:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                          </StoryComponentContainer>
+                                                        </Children>
+                                                        <Condition>
+                                                          <KnowIt>
+                                                            <Name>Question</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>question</Type>
+                                                            </Types>
+                                                            <Binding flavour="reference">
+                                                              <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt"/>
+                                                            </Binding>
+                                                          </KnowIt>
+                                                        </Condition>
+                                                      </AskIt>
+                                                    </Children>
+                                                    <CodeBlocks>
+                                                      <CodeBlockReference library="DefaultNWNLibrary">
+                                                        <Name>When &lt;subject&gt; is reached</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <TargetId>140</TargetId>
+                                                        <Parameters>
+                                                          <KnowIt>
+                                                            <Name>subject</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>dialogue_line</Type>
+                                                            </Types>
+                                                            <Binding flavour="resource">conv_stdsclass.DLG#2&gt;0&gt;0</Binding>
+                                                          </KnowIt>
+                                                        </Parameters>
+                                                      </CodeBlockReference>
+                                                    </CodeBlocks>
+                                                  </CauseIt>
+                                                  <CauseIt>
+                                                    <Name>When &lt;subject&gt; is reached</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children>
+                                                      <KnowIt>
+                                                        <Name>Is Active</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Types>
+                                                          <Type>question</Type>
+                                                        </Types>
+                                                        <Binding flavour="function">
+                                                          <ScriptIt>
+                                                            <Name>if &lt;Story Point&gt; is active</Name>
+                                                            <Visible>false</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>if &lt;Story Point&gt; is active</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>455</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Story Point</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>storyPoint</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="storyPoint">
+                                                                      <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint"/>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                        </Binding>
+                                                      </KnowIt>
+                                                      <AskIt>
+                                                        <Name>&lt;Question&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children>
+                                                          <StoryComponentContainer>
+                                                            <Name>Yes:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children>
+                                                              <ScriptIt>
+                                                                <Name>Succeed &lt;Story Point&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels>
+                                                                  <Label>NOW</Label>
+                                                                </Labels>
+                                                                <Children/>
+                                                                <CodeBlocks>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>Succeed &lt;Story Point&gt;</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>432</TargetId>
+                                                                    <Parameters>
+                                                                      <KnowIt>
+                                                                        <Name>Story Point</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>storyPoint</Type>
+                                                                        </Types>
+                                                                        <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/KnowIt/Binding/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                                                      </KnowIt>
+                                                                    </Parameters>
+                                                                  </CodeBlockReference>
+                                                                </CodeBlocks>
+                                                              </ScriptIt>
+                                                            </Children>
+                                                          </StoryComponentContainer>
+                                                          <StoryComponentContainer>
+                                                            <Name>No:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                          </StoryComponentContainer>
+                                                        </Children>
+                                                        <Condition>
+                                                          <KnowIt>
+                                                            <Name>Question</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>question</Type>
+                                                            </Types>
+                                                            <Binding flavour="reference">
+                                                              <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt[2]/Children/KnowIt"/>
+                                                            </Binding>
+                                                          </KnowIt>
+                                                        </Condition>
+                                                      </AskIt>
+                                                    </Children>
+                                                    <CodeBlocks>
+                                                      <CodeBlockReference library="DefaultNWNLibrary">
+                                                        <Name>When &lt;subject&gt; is reached</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <TargetId>140</TargetId>
+                                                        <Parameters>
+                                                          <KnowIt>
+                                                            <Name>subject</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>dialogue_line</Type>
+                                                            </Types>
+                                                            <Binding flavour="resource">conv_stdsclass.DLG#3</Binding>
+                                                          </KnowIt>
+                                                        </Parameters>
+                                                      </CodeBlockReference>
+                                                    </CodeBlocks>
+                                                  </CauseIt>
+                                                  <CauseIt>
+                                                    <Name>When &lt;subject&gt; is clicked by &lt;clicking creature&gt;</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children>
+                                                      <KnowIt>
+                                                        <Name>Is Active</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Types>
+                                                          <Type>question</Type>
+                                                        </Types>
+                                                        <Binding flavour="function">
+                                                          <ScriptIt>
+                                                            <Name>if &lt;Story Point&gt; is active</Name>
+                                                            <Visible>false</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>if &lt;Story Point&gt; is active</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>455</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Story Point</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>storyPoint</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="storyPoint">
+                                                                      <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint"/>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                        </Binding>
+                                                      </KnowIt>
+                                                      <KnowIt>
+                                                        <Name>The Player Character</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Types>
+                                                          <Type>creature</Type>
+                                                        </Types>
+                                                        <Binding flavour="function">
+                                                          <ScriptIt>
+                                                            <Name>The Player Character</Name>
+                                                            <Visible>false</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels>
+                                                              <Label></Label>
+                                                            </Labels>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>The Player Character</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>439</TargetId>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                        </Binding>
+                                                      </KnowIt>
+                                                      <AskIt>
+                                                        <Name>&lt;Question&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children>
+                                                          <StoryComponentContainer>
+                                                            <Name>Yes:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children>
+                                                              <ScriptIt>
+                                                                <Name>&lt;Creature&gt; sits on &lt;Placeable&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels>
+                                                                  <Label>TODO</Label>
+                                                                </Labels>
+                                                                <Children/>
+                                                                <CodeBlocks>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>&lt;Creature&gt; sits on &lt;Placeable&gt;</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>282</TargetId>
+                                                                    <Parameters>
+                                                                      <KnowIt>
+                                                                        <Name>Creature</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>creature</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="reference">
+                                                                          <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt[3]/Children/KnowIt[2]"/>
+                                                                        </Binding>
+                                                                      </KnowIt>
+                                                                      <KnowIt>
+                                                                        <Name>Placeable</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>placeable</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="resource">zep_ci_chr_006.UTP</Binding>
+                                                                      </KnowIt>
+                                                                    </Parameters>
+                                                                  </CodeBlockReference>
+                                                                </CodeBlocks>
+                                                              </ScriptIt>
+                                                              <ScriptIt>
+                                                                <Name>&lt;Starter&gt; starts &lt;Conversation&gt; with &lt;Partner&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels>
+                                                                  <Label>TODO</Label>
+                                                                </Labels>
+                                                                <Children/>
+                                                                <CodeBlocks>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>&lt;Starter&gt; starts &lt;Conversation&gt; with &lt;Partner&gt;</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>377</TargetId>
+                                                                    <Parameters>
+                                                                      <KnowIt>
+                                                                        <Name>Starter</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>creature</Type>
+                                                                          <Type>door</Type>
+                                                                          <Type>placeable</Type>
+                                                                        </Types>
+                                                                        <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt[3]/Binding"/>
+                                                                      </KnowIt>
+                                                                      <KnowIt>
+                                                                        <Name>Conversation</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>dialogue</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="resource">conv_teachclass.DLG</Binding>
+                                                                      </KnowIt>
+                                                                      <KnowIt>
+                                                                        <Name>Partner</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>creature</Type>
+                                                                          <Type>door</Type>
+                                                                          <Type>placeable</Type>
+                                                                        </Types>
+                                                                        <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt[3]/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding"/>
+                                                                      </KnowIt>
+                                                                    </Parameters>
+                                                                  </CodeBlockReference>
+                                                                </CodeBlocks>
+                                                              </ScriptIt>
+                                                            </Children>
+                                                          </StoryComponentContainer>
+                                                          <StoryComponentContainer>
+                                                            <Name>No:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                          </StoryComponentContainer>
+                                                        </Children>
+                                                        <Condition>
+                                                          <KnowIt>
+                                                            <Name>Question</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>question</Type>
+                                                            </Types>
+                                                            <Binding flavour="reference">
+                                                              <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt[3]/Children/KnowIt"/>
+                                                            </Binding>
+                                                          </KnowIt>
+                                                        </Condition>
+                                                      </AskIt>
+                                                    </Children>
+                                                    <CodeBlocks>
+                                                      <CodeBlockReference library="DefaultNWNLibrary">
+                                                        <Name>When &lt;subject&gt; is clicked by &lt;clicking creature&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <TargetId>114</TargetId>
+                                                        <Parameters>
+                                                          <KnowIt>
+                                                            <Name>subject</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>placeable</Type>
+                                                              <Type>door</Type>
+                                                              <Type>trigger</Type>
+                                                            </Types>
+                                                            <Binding reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt[3]/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt/CodeBlocks/CodeBlockReference/Parameters/KnowIt[2]/Binding"/>
+                                                          </KnowIt>
+                                                        </Parameters>
+                                                      </CodeBlockReference>
+                                                    </CodeBlocks>
+                                                  </CauseIt>
+                                                  <CauseIt>
+                                                    <Name>When &lt;subject&gt; is reached</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children>
+                                                      <KnowIt>
+                                                        <Name>Is Active</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Types>
+                                                          <Type>question</Type>
+                                                        </Types>
+                                                        <Binding flavour="function">
+                                                          <ScriptIt>
+                                                            <Name>if &lt;Story Point&gt; is active</Name>
+                                                            <Visible>false</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                            <CodeBlocks>
+                                                              <CodeBlockReference library="DefaultNWNLibrary">
+                                                                <Name>if &lt;Story Point&gt; is active</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <TargetId>455</TargetId>
+                                                                <Parameters>
+                                                                  <KnowIt>
+                                                                    <Name>Story Point</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <Types>
+                                                                      <Type>storyPoint</Type>
+                                                                    </Types>
+                                                                    <Binding flavour="storyPoint">
+                                                                      <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint"/>
+                                                                    </Binding>
+                                                                  </KnowIt>
+                                                                </Parameters>
+                                                              </CodeBlockReference>
+                                                            </CodeBlocks>
+                                                          </ScriptIt>
+                                                        </Binding>
+                                                      </KnowIt>
+                                                      <AskIt>
+                                                        <Name>&lt;Question&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children>
+                                                          <StoryComponentContainer>
+                                                            <Name>Yes:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children>
+                                                              <ScriptIt>
+                                                                <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels>
+                                                                  <Label>NOW</Label>
+                                                                </Labels>
+                                                                <Children/>
+                                                                <CodeBlocks>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>430</TargetId>
+                                                                    <Parameters>
+                                                                      <KnowIt>
+                                                                        <Name>Enable</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>enable_disable</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="constant">
+                                                                          <Type>enable_disable</Type>
+                                                                          <Value>FALSE</Value>
+                                                                        </Binding>
+                                                                      </KnowIt>
+                                                                      <KnowIt>
+                                                                        <Name>dialogue line</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>dialogue_line</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="resource">conv_teachclass.DLG#2</Binding>
+                                                                      </KnowIt>
+                                                                    </Parameters>
+                                                                  </CodeBlockReference>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>&lt;Enable&gt; &lt;dialogue line&gt;</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>431</TargetId>
+                                                                  </CodeBlockReference>
+                                                                </CodeBlocks>
+                                                              </ScriptIt>
+                                                              <ScriptIt>
+                                                                <Name>Succeed &lt;Story Point&gt;</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels>
+                                                                  <Label>NOW</Label>
+                                                                </Labels>
+                                                                <Children/>
+                                                                <CodeBlocks>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>Succeed &lt;Story Point&gt;</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>432</TargetId>
+                                                                    <Parameters>
+                                                                      <KnowIt>
+                                                                        <Name>Story Point</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>storyPoint</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="storyPoint">
+                                                                          <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint"/>
+                                                                        </Binding>
+                                                                      </KnowIt>
+                                                                    </Parameters>
+                                                                  </CodeBlockReference>
+                                                                </CodeBlocks>
+                                                              </ScriptIt>
+                                                            </Children>
+                                                          </StoryComponentContainer>
+                                                          <StoryComponentContainer>
+                                                            <Name>No:</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children/>
+                                                          </StoryComponentContainer>
+                                                        </Children>
+                                                        <Condition>
+                                                          <KnowIt>
+                                                            <Name>Question</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>question</Type>
+                                                            </Types>
+                                                            <Binding flavour="reference">
+                                                              <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Children/CauseIt[4]/Children/KnowIt"/>
+                                                            </Binding>
+                                                          </KnowIt>
+                                                        </Condition>
+                                                      </AskIt>
+                                                    </Children>
+                                                    <CodeBlocks>
+                                                      <CodeBlockReference library="DefaultNWNLibrary">
+                                                        <Name>When &lt;subject&gt; is reached</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <TargetId>140</TargetId>
+                                                        <Parameters>
+                                                          <KnowIt>
+                                                            <Name>subject</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>dialogue_line</Type>
+                                                            </Types>
+                                                            <Binding flavour="resource">conv_teachclass.DLG#2&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0&gt;0</Binding>
+                                                          </KnowIt>
+                                                        </Parameters>
+                                                      </CodeBlockReference>
+                                                    </CodeBlocks>
+                                                  </CauseIt>
+                                                </Children>
+                                                <Successors>
+                                                  <StoryPoint>
+                                                    <Name>New Story Point</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children/>
+                                                    <Successors/>
+                                                    <FanIn>1</FanIn>
+                                                  </StoryPoint>
+                                                  <StoryPoint>
+                                                    <Name>Lost in the Abyss</Name>
+                                                    <Visible>true</Visible>
+                                                    <Enabled>true</Enabled>
+                                                    <Labels/>
+                                                    <Children>
+                                                      <CauseIt>
+                                                        <Name>When &lt;subject&gt; is entered by &lt;Entering Creature&gt;</Name>
+                                                        <Visible>true</Visible>
+                                                        <Enabled>true</Enabled>
+                                                        <Labels/>
+                                                        <Children>
+                                                          <KnowIt>
+                                                            <Name>Is Active</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Types>
+                                                              <Type>question</Type>
+                                                            </Types>
+                                                            <Binding flavour="function">
+                                                              <ScriptIt>
+                                                                <Name>if &lt;Story Point&gt; is active</Name>
+                                                                <Visible>false</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Children/>
+                                                                <CodeBlocks>
+                                                                  <CodeBlockReference library="DefaultNWNLibrary">
+                                                                    <Name>if &lt;Story Point&gt; is active</Name>
+                                                                    <Visible>true</Visible>
+                                                                    <Enabled>true</Enabled>
+                                                                    <Labels/>
+                                                                    <TargetId>455</TargetId>
+                                                                    <Parameters>
+                                                                      <KnowIt>
+                                                                        <Name>Story Point</Name>
+                                                                        <Visible>true</Visible>
+                                                                        <Enabled>true</Enabled>
+                                                                        <Labels/>
+                                                                        <Types>
+                                                                          <Type>storyPoint</Type>
+                                                                        </Types>
+                                                                        <Binding flavour="storyPoint">
+                                                                          <StoryPoint reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint[2]"/>
+                                                                        </Binding>
+                                                                      </KnowIt>
+                                                                    </Parameters>
+                                                                  </CodeBlockReference>
+                                                                </CodeBlocks>
+                                                              </ScriptIt>
+                                                            </Binding>
+                                                          </KnowIt>
+                                                          <AskIt>
+                                                            <Name>&lt;Question&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <Children>
+                                                              <StoryComponentContainer>
+                                                                <Name>Yes:</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Children/>
+                                                              </StoryComponentContainer>
+                                                              <StoryComponentContainer>
+                                                                <Name>No:</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Children/>
+                                                              </StoryComponentContainer>
+                                                            </Children>
+                                                            <Condition>
+                                                              <KnowIt>
+                                                                <Name>Question</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>question</Type>
+                                                                </Types>
+                                                                <Binding flavour="reference">
+                                                                  <KnowIt reference="/Story/StartStoryPoint/Successors/StoryPoint/Children/CauseIt/Children/AskIt/Children/StoryComponentContainer/Children/ScriptIt[2]/CodeBlocks/CodeBlockReference/Parameters/KnowIt/Binding/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint/Successors/StoryPoint[2]/Children/CauseIt/Children/KnowIt"/>
+                                                                </Binding>
+                                                              </KnowIt>
+                                                            </Condition>
+                                                          </AskIt>
+                                                        </Children>
+                                                        <CodeBlocks>
+                                                          <CodeBlockReference library="DefaultNWNLibrary">
+                                                            <Name>When &lt;subject&gt; is entered by &lt;Entering Creature&gt;</Name>
+                                                            <Visible>true</Visible>
+                                                            <Enabled>true</Enabled>
+                                                            <Labels/>
+                                                            <TargetId>139</TargetId>
+                                                            <Parameters>
+                                                              <KnowIt>
+                                                                <Name>subject</Name>
+                                                                <Visible>true</Visible>
+                                                                <Enabled>true</Enabled>
+                                                                <Labels/>
+                                                                <Types>
+                                                                  <Type>area</Type>
+                                                                </Types>
+                                                                <Binding flavour="resource">mind.ARE</Binding>
+                                                              </KnowIt>
+                                                            </Parameters>
+                                                          </CodeBlockReference>
+                                                        </CodeBlocks>
+                                                      </CauseIt>
+                                                    </Children>
+                                                    <Successors/>
+                                                    <FanIn>1</FanIn>
+                                                  </StoryPoint>
+                                                </Successors>
+                                                <FanIn>1</FanIn>
+                                              </StoryPoint>
+                                            </Successors>
+                                            <FanIn>1</FanIn>
+                                          </StoryPoint>
                                           <StoryPoint>
                                             <Name>New Story Point</Name>
                                             <Visible>true</Visible>
                                             <Enabled>true</Enabled>
                                             <Labels/>
                                             <Children/>
-                                            <Successors/>
+                                            <Successors>
+                                              <StoryPoint>
+                                                <Name>New Story Point</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <Children/>
+                                                <Successors/>
+                                                <FanIn>1</FanIn>
+                                              </StoryPoint>
+                                            </Successors>
+                                            <FanIn>1</FanIn>
+                                          </StoryPoint>
+                                          <StoryPoint>
+                                            <Name>New Story Point</Name>
+                                            <Visible>true</Visible>
+                                            <Enabled>true</Enabled>
+                                            <Labels/>
+                                            <Children/>
+                                            <Successors>
+                                              <StoryPoint>
+                                                <Name>New Story Point</Name>
+                                                <Visible>true</Visible>
+                                                <Enabled>true</Enabled>
+                                                <Labels/>
+                                                <Children/>
+                                                <Successors/>
+                                                <FanIn>1</FanIn>
+                                              </StoryPoint>
+                                            </Successors>
                                             <FanIn>1</FanIn>
                                           </StoryPoint>
                                         </Successors>
@@ -805,7 +2497,7 @@
                                 </Types>
                                 <Binding flavour="constant">
                                   <Type>string</Type>
-                                  <Value>I need to find Catherine Lowell and Viktor Davis.  They disappeared recently, so there’s a good chance they’re still alive.</Value>
+                                  <Value>I need to find Catherine Lowell and Viktor Davis.  They disappeared recently, so there?s a good chance they?re still alive.</Value>
                                 </Binding>
                               </KnowIt>
                             </Parameters>
